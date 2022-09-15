@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAG & DROP</title>
+
+    <style>
+
+    body{
+
+        margin: 10px;
+        border: 10px;
+        padding: 5px;
+        background-color:indigo; 
+
+        
+       
+        }
+
+     
+     
+     #Head{
+
+       text-align: center;
+       text-decoration-style: solid;
+       color:antiquewhite;
+
+      
+       
+     }
+     #Para{
+        text-align: center;
+
+
+     }
+
+     img{
+        height:30px;
+        width:30px;
+        
+        
+
+     }
+
+     #drag1{
+        height:100%;
+        width:100%;
+        object-fit: fill;
+     }
+
+     .div {
+        width: 260px;
+        height: 184px;
+        padding: 14px;
+        border: 10px solid black;
+        background-color: #F5F5F5;
+        margin:auto;
+        
+    }
+     
+
+     
+
+    </style>
+</head>
+<body>
+
+    
+    <div class="Main">
+
+        <h1 id="Head">NetAxis Drag & Drop <span></span><img id="image" src="data:image/jpeg;base64,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"/></span></h1>
+        
+
+        <hr/>
+        <h2 id="Para">Drop Your Image Here</h2>
+
+
+
+
+    </div>
+
+    <div class="div" ondrop="dragDrop(event)" ondragover="allowDrop(event)">
+
+
+     <img id="drag1"src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGMrv0WSPzB1G-LN3NkjUBkAI_Vr3ZelYt0g&usqp=CAU" 
+     draggable="true"
+     ondragstart="dragStart(event)">
+
+
+  </div>
+<br>
+
+
+<div class="div"
+    ondrop="dragDrop(event)"
+    ondragover="allowDrop(event)">
+</div>
+
+
+</body>
+</html>
+
+<script>
+
+function allowDrop(ev) {
+        ev.preventDefault();
+    }
+ 
+    function dragStart(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+ 
+    function dragDrop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+
+
+</script>
